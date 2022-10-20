@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Eventos</title>
+    <style>
+        #cad
+        {
+            background-color: rgb(218, 142, 211);
+            margin-left: 350px;
+            margin-right: 500px;
+            margin-top: 100px;
+            padding: 30px;
+            border-radius: 5px;  
+            font-family: Bookman Old Style; 
+            border-style:dashed;   
+            
+
+        }
+        #titulo
+        {
+            text-align: left;
+            font-weight: bold;
+        }
+        #tarefas
+        {
+            width: 400px;   
+            margin-left: 400px;
+            background-color: rgb(192, 3, 151);
+            margin-top: 20px;
+            border-radius: 3px;
+                
+        }
+        #topo
+        {
+           margin-top: auto;
+           border-bottom: solid 5px;
+           border-color: black;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            background-color: rgb(192, 3, 151);
+            font-family: Bookman Old Style;
+            font-size: larger;
+        }
+        .button{
+            background-color: rgb(0, 0, 0);
+            border-radius: 5px;  
+           
+            
+            
+        }
+        .menu{
+            font-size: 18px;
+            margin-left: 700px;
+            margin-right: 0;
+        }
+        .menu1{
+            margin-left:0;
+        }
+        .itens{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 5px;
+        }
+        body{
+            margin: auto;
+            background-color: rgb(218, 142, 211);
+        }
+    </style>
+</head>
+<body>
+    
+        <div id="topo">
+            <p id="titulo">Minhas Tarefas</p>
+            <p class="menu" onclick="cadastrar();" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">Cadastrar</p>
+            <p class="menu1" onclick="exibir();" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">Exibir</p>
+        </div>
+        <center>
+        <div id="cad">
+            <div>
+            <p style="margin:0%;font-size: medium;"> Digite as tarefas do dia:</p><br>
+                <input id="texto" style="width: 50%" placeholder="Ex: Limpar a casa">
+            </div><br>
+        
+            
+            
+                <button class="button" onclick="adicionar();" style="color:rgb(211, 102, 200)" >Adicionar</button>
+            </center>
+        </div>
+        <div id="tarefas">      
+        </div>
+  
+    <script>
+        function adicionar()
+        {
+            
+            var conteudo = document.getElementById('texto').value;
+            if(conteudo!="")
+            {
+                var novoElemento = document.createTextNode(conteudo);
+                var divNova = document.createElement('div');
+                divNova.className="itens";
+                var botao = document.createElement('button');
+                var check = document.createElement('input');
+                check.setAttribute("type", "checkbox");
+                
+                botao.innerHTML = "Excluir";
+                botao.className = "button";
+                botao.style.color="rgb(218, 142, 211)";
+                botao.addEventListener("click",
+                function(){
+                    divNova.remove();
+                })
+                divNova.appendChild(check);
+                check.addEventListener('change',function(){
+                    if(this.checked){
+                        divNova.style.textDecoration = "line-through";
+                    }else{
+                        divNova.style.textDecoration = "none";
+                    }
+                })
+                divNova.appendChild(novoElemento);
+                divNova.appendChild(botao);
+                document.getElementById('tarefas').appendChild(divNova);
+                document.getElementById('texto').value = "";
+                document.getElementById('descricao').value = "";
+                document.getElementById('cad').style.display="none";
+                document.getElementById('tarefas').style.display="block";
+            }
+            
+        }
+        function cadastrar()
+        {
+            document.getElementById('cad').style.display="block";
+            document.getElementById('tarefas').style.display="none";
+                
+        }
+        function exibir()
+        {
+             document.getElementById('cad').style.display="none";
+             document.getElementById('tarefas').style.display="block";
+                
+        }
+    </script>  
+</body>
+</html>
