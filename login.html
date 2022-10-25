@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+
+  <title>Formulário de Login </title>
+
+  <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+  <div class="container" >
+    <a class="links" id="paracadastro"></a>
+    <a class="links" id="paralogin"></a>
+     
+    <div class="content">      
+      <!--FORMULÁRIO DE LOGIN-->
+      <div id="login"> 
+        <form method="post" action=""> 
+          <h1>Login</h1> 
+          <p> 
+            <label for="nome_login">Seu nome</label>
+            <input id="nome_login" name="nome_login" required="required" type="text" placeholder="ex. Fulaninho Chatinho"/>
+          </p>
+           
+          <p> 
+            <label for="email_login">Seu e-mail</label>
+            <input id="email_login" name="email_login" required="required" type="password" placeholder="ex. fulaninho@chatinho.com" /> 
+          </p>
+           
+          <p> 
+            <input type="submit" value="Logar" /> 
+          </p>
+           
+          <p class="link">
+            Ainda não tem conta?
+            <a href="#paracadastro">Cadastre-se</a>
+          </p>
+        </form>
+      </div>
+ 
+      <!--FORMULÁRIO DE CADASTRO-->
+      <div id="cadastro">
+        <form method="post" action=""> 
+          <h1>Cadastro</h1> 
+           
+          <p> 
+            <label for="nome_cad">Seu nome</label>
+            <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="ex. Fulaninho" />
+          </p>
+           
+          <p> 
+            <label for="email_cad">Seu e-mail</label>
+            <input id="email_cad" name="email_cad" required="required" type="email" placeholder="ex.fulaninho@chatinho.com"/> 
+          </p>
+           
+          <p> 
+            <label for="senha_cad">Sua senha</label>
+            <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 1234"/>
+          </p>
+          <p> 
+            <label for="senha_cad">Confirme sua senha</label>
+            <input id="senha_conf" name="senha_cad" required="required" type="password" placeholder="ex. 1234"/>
+          </p>
+          <p> 
+            <button  onclick="cadastra();">Cadastrar</button>
+
+          </p>
+          <input type="submit" value="Cadastrar" onclick="cadastra();"/> 
+          <p class="link">  
+            Já tem conta?
+            <a href="#paralogin"> Ir para Login </a>
+
+            <div id="erro">
+
+
+           
+
+            </div>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>  
+</body>
+<script>
+function cadastra() {
+ var senha_cad = document.getElementById("senha_cad").value;
+ var senha_conf= document.getElementById("senha_conf").value;
+ var erro = document.getElementById("erro");
+console.log(senha_cad);
+console.log(senha_conf);
+  if (senha_cad !==senha_conf){
+    erro.innerHTML+="As senhas não conferem.";
+  }else {
+    console.log('a');
+  }
+
+
+
+}
+
+
+
+</script>
+
+</html>
