@@ -50,7 +50,11 @@
             <label for="email_cad">Seu e-mail</label>
             <input id="email_cad" name="email_cad" required="required" type="email" placeholder="ex.fulaninho@chatinho.com"/> 
           </p>
+<<<<<<< HEAD
           
+=======
+           
+>>>>>>> 86ebe555fa2ff2431ec02f16019f7ce42c7db903
           <p> 
             <label for="senha_cad">Sua senha</label>
             <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 1234"/>
@@ -60,14 +64,22 @@
             <input id="senha_conf" name="senha_cad" required="required" type="password" placeholder="ex. 1234"/>
           </p>
           <p> 
+<<<<<<< HEAD
             <button type="submit"  onclick="cadastra();">Cadastrar</button> 
           </p>
           
           
+=======
+            <button  onclick="cadastra();">Cadastrar</button>
+
+          </p>
+          <input type="submit" value="Cadastrar" onclick="cadastra();"/> 
+>>>>>>> 86ebe555fa2ff2431ec02f16019f7ce42c7db903
           <p class="link">  
             Já tem conta?
             <a href="#paralogin"> Ir para Login </a>
 
+<<<<<<< HEAD
            
           </p>
           
@@ -80,6 +92,19 @@
 
   <div id = "erro"> </div>
 
+=======
+            <div id="erro">
+
+
+           
+
+            </div>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>  
+>>>>>>> 86ebe555fa2ff2431ec02f16019f7ce42c7db903
 </body>
 <script>
 function cadastra() {
@@ -88,15 +113,22 @@ function cadastra() {
  var erro = document.getElementById("erro");
 console.log(senha_cad);
 console.log(senha_conf);
+<<<<<<< HEAD
   if (senha_cad !== senha_conf){
+=======
+  if (senha_cad !==senha_conf){
+>>>>>>> 86ebe555fa2ff2431ec02f16019f7ce42c7db903
     erro.innerHTML+="As senhas não conferem.";
   }else {
     console.log('a');
   }
+<<<<<<< HEAD
   var nome_cad = document.getElementById("nome_cad").value;
   if (nome_cad.length < 10) {
     erro.innerHTML+="Está errado seu burro.";
   }
+=======
+>>>>>>> 86ebe555fa2ff2431ec02f16019f7ce42c7db903
 
 
 

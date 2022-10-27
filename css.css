@@ -45,10 +45,13 @@
   input {
     outline: none;
   }
+<<<<<<< HEAD
   #erro{
     color: black;
     font-size: 20px;
   }
+=======
+>>>>>>> 86ebe555fa2ff2431ec02f16019f7ce42c7db903
    
   /*estilo dos input,  menos o checkbox */
   input:not([type="checkbox"]){
@@ -68,7 +71,11 @@
   }
    
   /*estilo do botão submit */
+<<<<<<< HEAD
   button{
+=======
+  input[type="submit"]{
+>>>>>>> 86ebe555fa2ff2431ec02f16019f7ce42c7db903
     width: 100%!important;
     cursor: pointer;  
     background: rgb(179, 43, 179);
@@ -82,7 +89,11 @@
     -webkit-border-radius: 5px;
     border-radius: 5px;
    
+<<<<<<< HEAD
     
+=======
+    transition: all 0.2s linear;
+>>>>>>> 86ebe555fa2ff2431ec02f16019f7ce42c7db903
   }
    
   /*estilo do botão submit no hover */
